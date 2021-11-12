@@ -47,15 +47,17 @@
 .dial label span {
     display: block;
     position: absolute;
-    width: 3rem;
-    height: 3rem;
-    line-height: 3rem;
+    width: 7rem;
+    height: 7rem;
+    line-height: 7rem;
     text-align: center;
-    top: .45in;
+    top: .4in;
+    letter-spacing: -.05em;
     left: 50%;
     /* border: 1px solid blue; */
-    font-size: 3rem;
+    font-size: 7rem;
     transform-origin: 0% 50%;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .dial .tick:after {

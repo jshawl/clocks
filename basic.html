@@ -2,7 +2,9 @@
 <html>
   <head>
     <link rel='stylesheet' type='text/css' href='clock.css' />
-  
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Six+Caps&family=Work+Sans:wght@700&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <div class='dial'></div>
@@ -17,7 +19,7 @@
       for (let i=0; i < 12; i++){
         const label = document.createElement('label')
         const text = document.createElement('span')
-        text.innerHTML = i === 0 ? '12' : i;
+        text.innerHTML = i === 0 ? '12' : 12 - i;
         text.style.transform = `rotate(-${i * 30}deg) translateX(-50%)`;
         label.style.transform = `rotate(${i*30}deg) translateX(-50%)`
         label.appendChild(text);
