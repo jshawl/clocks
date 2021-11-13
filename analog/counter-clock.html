@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='clock.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Six+Caps&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+    <div class='dial'></div>
+    <script>
+        function Face(options) {
+            const dial = document.querySelector(options.selector);
+            for (let i = 0; i < 60; i++) {
+                const tick = document.createElement("div");
+                tick.classList.add("tick", i % 5 === 0 ? "major" : "minor", `tick-${i}`);
+                tick.style.transform = `rotate(${6 * i}deg)`;
+                dial.appendChild(tick);
+            }
+            for (let i = 0; i < 12; i++) {
+                const label = document.createElement("label");
+                const text = document.createElement("span");
+                text.innerHTML = options.label(i);
+                text.style.transform = `rotate(-${i * 30}deg) translateX(-50%)`;
+                label.style.transform = `rotate(${i * 30}deg) translateX(-50%)`;
+                label.appendChild(text);
+                dial.append(label);
+            }
+        }
+        new Face({
+            selector: '.dial',
+            label: d => 12 - d,
+        });
+    </script>
+</body>
+
+</html>
